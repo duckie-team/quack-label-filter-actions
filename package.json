@@ -1,6 +1,6 @@
 {
   "name": "quack-label-filter-actions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "꽥꽥 배포용으로 사용되는 label 필터링 액션",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/duckie-team/quack-label-filter-actions#readme",
   "dependencies": {
-    "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.1"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
   }
 }
