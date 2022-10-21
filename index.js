@@ -2,11 +2,6 @@ const core = require('@actions/core')
 
 try {
   const rawLabel = core.getInput('labels')
-  // const rawLabel = `[
-  //   "ReleaseTarget_UiComponents",
-  //   "BumpType_Major",
-  //   "publish"
-  // ]`
 
   const labels = rawLabel.substring(1, rawLabel.length - 2).
     replace(/[\n"]/gi, '').
@@ -50,6 +45,28 @@ try {
   }
   console.log(`Publish module id: ${publish_module_id}`)
   core.setOutput('publish_module_id', publish_module_id)
+
+  // default ('Playground' 배포의 경우 ReleaseTarget 설정을 필수로 하지 않음)
+  let version_path = 'versions/playground.txt'
+  switch (release_target) {
+    case 'LintCore':
+      version_path = 'versions/lint-core.txt'
+      break
+    case 'LintQuack':
+      version_path = 'versions/lint-quack.txt'
+      break
+    case 'LintCompose':
+      version_path = 'versions/lint-compose.txt'
+      break
+    case 'LintWriting':
+      version_path = 'versions/lint-writing.txt'
+      break
+    case 'UiComponents':
+      version_path = 'versions/ui-components.txt'
+      break
+  }
+  console.log(`Version_path: ${version_path}`)
+  core.setOutput('version_path', version_path)
 
   const is_snapshot = labels.indexOf('publish') === -1
   console.log(`Is snapshot: ${is_snapshot}`)

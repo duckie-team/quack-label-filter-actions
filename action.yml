@@ -19,6 +19,8 @@ outputs:
     description: 'Publish 할 모듈명'
   is_snapshot:
     description: '스냅샷 배포인지 여부'
+  version_path:
+    description: '버전 파일 경로'
 
 runs:
   using: 'node16'
