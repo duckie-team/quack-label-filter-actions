@@ -28,7 +28,7 @@ outputs:
 ```yml
 - name: Label filtering
   id: label
-  uses: duckie-team/quack-label-filter-actions@1.0.2
+  uses: duckie-team/quack-label-filter-actions@{version}
   with:
     labels: "${{ toJson(github.event.pull_request.labels.*.name) }}"
 ```
