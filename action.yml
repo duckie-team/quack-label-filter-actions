@@ -1,6 +1,9 @@
 name: 'quack-label-filter-actions'
 author: 'jisungbin'
 description: '꽥꽥 배포용으로 사용되는 label 필터링 액션'
+branding:
+  icon: 'filter'
+  color: 'orange'
 
 inputs:
   labels:
