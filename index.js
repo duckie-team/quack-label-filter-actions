@@ -21,6 +21,9 @@ try {
   let release_target = labels.find(label => label.startsWith('ReleaseTarget_'))
   if (release_target !== undefined) {
     release_target = release_target.split('_')[1]
+    core.setOutput('has_target', true)
+  } else {
+    core.setOutput('has_target', false)
   }
   console.log(`Release target: ${release_target}`)
   core.setOutput('release_target', release_target)

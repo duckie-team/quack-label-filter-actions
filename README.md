@@ -21,6 +21,8 @@ outputs:
     description: '스냅샷 배포인지 여부'
   version_path:
     description: '버전 파일 경로'
+  has_target:
+    description: 'Release 대상이 있는지 여부'
 ```
 
 ## Usage
